@@ -1,0 +1,1602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - ventahora@localhost" uuid="a3f1363d-7dae-4a4b-8977-1d1e5d25977f">
+    <database-info product="MySQL" version="5.5.5-10.1.10-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="ventahora"/>
+      <table id="2" parent="1" name="ingresos"/>
+      <table id="3" parent="1" name="resultadosp1"/>
+      <table id="4" parent="1" name="resultadosp2"/>
+      <table id="5" parent="1" name="actualizar"/>
+      <table id="6" parent="1" name="llaves"/>
+      <table id="7" parent="1" name="resdepto1"/>
+      <table id="8" parent="1" name="resdepto2"/>
+      <column id="9" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="10" parent="2" name="numorden">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="11" parent="2" name="fechant">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="12" parent="2" name="horant">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="13" parent="2" name="tipvta">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="14" parent="2" name="montovta">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="15" parent="2" name="fidelidad">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="16" parent="2" name="tipopag">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="17" parent="2" name="coddesp">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="18" parent="2" name="estorden">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="19" parent="2" name="subestoc">
+        <mandatory>1</mandatory>
+        <data-type>varchar(5)</data-type>
+      </column>
+      <column id="20" parent="2" name="pxq">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="21" parent="2" name="tipocompra">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="22" parent="2" name="canvend">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="23" parent="2" name="precuni">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="24" parent="2" name="depto">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="25" parent="2" name="inicio">
+        <mandatory>1</mandatory>
+        <data-type>varchar(6)</data-type>
+      </column>
+      <column id="26" parent="2" name="fin">
+        <mandatory>1</mandatory>
+        <data-type>varchar(6)</data-type>
+      </column>
+      <index id="27" parent="2" name="fechant">
+        <columns>fechant</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <column id="28" parent="3" name="diaactual">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="29" parent="3" name="inicio">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="30" parent="3" name="hora">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="31" parent="3" name="mingresobrutoacum">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="32" parent="3" name="ordingresobrutoacum">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="33" parent="3" name="mclickacum">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="34" parent="3" name="ordclickacum">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="35" parent="3" name="mpendacum">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="36" parent="3" name="ordpendacum">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="37" parent="3" name="manulacum">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="38" parent="3" name="ordanulacum">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="39" parent="3" name="mnoviosacum">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="40" parent="3" name="ordnoviosacum">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="41" parent="3" name="mingresonetohora">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="42" parent="3" name="mingresonetoacum">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="43" parent="3" name="ordingresonetoacum">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="44" parent="3" name="rpastacum">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,1)</data-type>
+      </column>
+      <column id="45" parent="3" name="ticketpromedio">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="46" parent="3" name="prodticket">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,2)</data-type>
+      </column>
+      <column id="47" parent="3" name="ticketpromedioh">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="48" parent="3" name="prodticketh">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,2)</data-type>
+      </column>
+      <index id="49" parent="3" name="diaactual">
+        <columns>diaactual</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <column id="50" parent="4" name="diaactual">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="51" parent="4" name="inicio">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="52" parent="4" name="fin">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="53" parent="4" name="ingresositio">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="54" parent="4" name="ingresofono">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="55" parent="4" name="empresa">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="56" parent="4" name="puntos">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="57" parent="4" name="totalventa">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="58" parent="4" name="cat">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="59" parent="4" name="ctrans">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="60" parent="4" name="dtrans">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="61" parent="4" name="gift">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="62" parent="4" name="cempresa">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="63" parent="4" name="totalpago">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="64" parent="5" name="hora">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="65" parent="5" name="fecha">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="66" parent="5" name="indicador">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="67" parent="6" name="llave">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <key id="68" parent="6" name="PRIMARY">
+        <columns>llave</columns>
+        <primary>1</primary>
+      </key>
+      <column id="69" parent="7" name="diaactual">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="70" parent="7" name="depto">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="71" parent="7" name="inicio">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="72" parent="7" name="hora">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="73" parent="7" name="mingresobrutoacum">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="74" parent="7" name="ordingresobrutoacum">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="75" parent="7" name="mclickacum">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="76" parent="7" name="ordclickacum">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="77" parent="7" name="mpendacum">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="78" parent="7" name="ordpendacum">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="79" parent="7" name="manulacum">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="80" parent="7" name="ordanulacum">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="81" parent="7" name="mnoviosacum">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="82" parent="7" name="ordnoviosacum">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="83" parent="7" name="mingresonetohora">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="84" parent="7" name="mingresonetoacum">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="85" parent="7" name="ordingresonetoacum">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="86" parent="7" name="rpastacum">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,1)</data-type>
+      </column>
+      <column id="87" parent="7" name="ticketpromedio">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="88" parent="7" name="prodticket">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,2)</data-type>
+      </column>
+      <column id="89" parent="7" name="ticketpromedioh">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="90" parent="7" name="prodticketh">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,2)</data-type>
+      </column>
+      <column id="91" parent="8" name="diaactual">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="92" parent="8" name="depto">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="93" parent="8" name="inicio">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="94" parent="8" name="fin">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="95" parent="8" name="ingresositio">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="96" parent="8" name="ingresofono">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="97" parent="8" name="empresa">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="98" parent="8" name="puntos">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="99" parent="8" name="totalventa">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="100" parent="8" name="cat">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="101" parent="8" name="ctrans">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="102" parent="8" name="dtrans">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="103" parent="8" name="gift">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="104" parent="8" name="cempresa">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="105" parent="8" name="totalpago">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+    </database-model>
+  </data-source>
+  <data-source name="MySQL - ventas@localhost" uuid="8f26ccce-1e95-48d9-b828-631028b89493">
+    <database-info product="MySQL" version="5.5.5-10.1.10-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="ventas"/>
+      <table id="2" parent="1" name="actualizar"/>
+      <table id="3" parent="1" name="anulaciones"/>
+      <table id="4" parent="1" name="bdrc"/>
+      <table id="5" parent="1" name="depto"/>
+      <table id="6" parent="1" name="ingreso"/>
+      <table id="7" parent="1" name="ncredito"/>
+      <table id="8" parent="1" name="ncredito2"/>
+      <table id="9" parent="1" name="resdepto1"/>
+      <table id="10" parent="1" name="resdepto2"/>
+      <table id="11" parent="1" name="resdepto3"/>
+      <table id="12" parent="1" name="resultadosp1"/>
+      <table id="13" parent="1" name="resultadosp2"/>
+      <table id="14" parent="1" name="resultadosp3"/>
+      <table id="15" parent="1" name="bdrc_tipo_cliente"/>
+      <table id="16" parent="1" name="depto_meta"/>
+      <table id="17" parent="1" name="llaves"/>
+      <table id="18" parent="1" name="picking"/>
+      <table id="19" parent="1" name="resnegocio1"/>
+      <table id="20" parent="1" name="resnegocio2"/>
+      <table id="21" parent="1" name="resnegocio3"/>
+      <column id="22" parent="2" name="indicador">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="23" parent="2" name="hora">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="24" parent="2" name="fecha">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="25" parent="3" name="numorden">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="26" parent="3" name="pxq">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="27" parent="3" name="montovta">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="28" parent="3" name="fecorden">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="29" parent="3" name="depto1">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="30" parent="3" name="tipocompra">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <index id="31" parent="3" name="fecorden">
+        <columns>fecorden</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <column id="32" parent="4" name="numorden">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="33" parent="4" name="emailcli">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="34" parent="4" name="fechant">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="35" parent="4" name="depto1">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="36" parent="4" name="negocio">
+        <mandatory>1</mandatory>
+        <data-type>varchar(9)</data-type>
+      </column>
+      <index id="37" parent="4" name="fechant">
+        <columns>fechant</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <column id="38" parent="5" name="depto1">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="39" parent="5" name="nomdepto">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="40" parent="5" name="pm">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="41" parent="5" name="division">
+        <mandatory>1</mandatory>
+        <data-type>varchar(15)</data-type>
+      </column>
+      <column id="42" parent="5" name="negocio">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="43" parent="5" name="tipo">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="44" parent="5" name="suni">
+        <mandatory>1</mandatory>
+        <data-type>varchar(7)</data-type>
+      </column>
+      <column id="45" parent="5" name="meta">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <key id="46" parent="5" name="PRIMARY">
+        <columns>depto1</columns>
+        <primary>1</primary>
+      </key>
+      <column id="47" parent="6" name="numorden">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="48" parent="6" name="fectrantsl">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="49" parent="6" name="tipvta">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="50" parent="6" name="tipopag">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="51" parent="6" name="coddesp">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="52" parent="6" name="pxq">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="53" parent="6" name="codsku">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="54" parent="6" name="tipocompra">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="55" parent="6" name="canvend">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="56" parent="6" name="fidelidad">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="57" parent="6" name="depto1">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="58" parent="6" name="tienda">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="59" parent="6" name="dirdesp">
+        <mandatory>1</mandatory>
+        <data-type>varchar(60)</data-type>
+      </column>
+      <column id="60" parent="6" name="codcomdes">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="61" parent="6" name="rutcli">
+        <mandatory>1</mandatory>
+        <data-type>varchar(21)</data-type>
+      </column>
+      <column id="62" parent="6" name="cosprom">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="63" parent="6" name="fectrantsl">
+        <columns>fectrantsl</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <column id="64" parent="7" name="numorden">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="65" parent="7" name="feceminc">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="66" parent="7" name="totvtactdo">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="67" parent="7" name="tienda">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="68" parent="7" name="dirdesp">
+        <mandatory>1</mandatory>
+        <data-type>varchar(60)</data-type>
+      </column>
+      <column id="69" parent="7" name="coddesp">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="70" parent="7" name="feceminc">
+        <columns>feceminc</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <column id="71" parent="8" name="numorden">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="72" parent="8" name="feceminc">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="73" parent="8" name="totarttsl">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="74" parent="8" name="departtsl">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="75" parent="8" name="feceminc">
+        <columns>feceminc</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <column id="76" parent="9" name="depto1">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="77" parent="9" name="diaactual">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="78" parent="9" name="mingresobruto">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="79" parent="9" name="ordingresobruto">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="80" parent="9" name="mclick">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="81" parent="9" name="ordclick">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="82" parent="9" name="mncredito">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="83" parent="9" name="ordncredito">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="84" parent="9" name="mingresoneto">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="85" parent="9" name="ordingresoneto">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="86" parent="9" name="diapasado">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="87" parent="9" name="mingresonetop">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="88" parent="9" name="ordingresonetop">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="89" parent="9" name="rpast">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="90" parent="9" name="manul">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="91" parent="9" name="ordanul">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="92" parent="9" name="mnovios">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="93" parent="9" name="ordnovios">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="94" parent="9" name="depto1">
+        <columns>depto1</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="95" parent="9" name="diaactual">
+        <columns>diaactual</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <column id="96" parent="10" name="depto1">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="97" parent="10" name="diaactual">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="98" parent="10" name="ingresositioac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="99" parent="10" name="ingresositioan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="100" parent="10" name="rpastingresositio">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="101" parent="10" name="ingresofonoac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="102" parent="10" name="ingresofonoan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="103" parent="10" name="rpastingresofono">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="104" parent="10" name="empresaac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="105" parent="10" name="empresaan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="106" parent="10" name="rpastempresa">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="107" parent="10" name="puntosac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="108" parent="10" name="puntosan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="109" parent="10" name="rpastpuntos">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="110" parent="10" name="totalventasac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="111" parent="10" name="totalventasan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="112" parent="10" name="rpasttotalventas">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="113" parent="10" name="mcatac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="114" parent="10" name="mcatan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="115" parent="10" name="rpastcat">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="116" parent="10" name="mctransac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="117" parent="10" name="mctransan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="118" parent="10" name="rpastctrans">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="119" parent="10" name="mdtransac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="120" parent="10" name="mdtransan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="121" parent="10" name="rpastdtrans">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="122" parent="10" name="mgiftac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="123" parent="10" name="mgiftan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="124" parent="10" name="rpastgift">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="125" parent="10" name="mcempresaac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="126" parent="10" name="mcempresaan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="127" parent="10" name="rpastcempresa">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="128" parent="10" name="totalpagoac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="129" parent="10" name="totalpagoan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="130" parent="10" name="rpasttotalpago">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="131" parent="10" name="depto1">
+        <columns>depto1</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="132" parent="10" name="diaactual">
+        <columns>diaactual</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <column id="133" parent="11" name="depto1">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="134" parent="11" name="diaactual">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="135" parent="11" name="ticketpromedioac">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="136" parent="11" name="ticketpromedioan">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="137" parent="11" name="rpastticket">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,1)</data-type>
+      </column>
+      <column id="138" parent="11" name="prodticketac">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,2)</data-type>
+      </column>
+      <column id="139" parent="11" name="prodticketan">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,2)</data-type>
+      </column>
+      <column id="140" parent="11" name="rpastprodticket">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,1)</data-type>
+      </column>
+      <column id="141" parent="11" name="recompraac">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="142" parent="11" name="recompraan">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="143" parent="11" name="rpastrecompra">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,1)</data-type>
+      </column>
+      <column id="144" parent="11" name="clinueac">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="145" parent="11" name="clinuean">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="146" parent="11" name="cliantac">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="147" parent="11" name="cliantan">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="148" parent="11" name="rpastclinue">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,1)</data-type>
+      </column>
+      <column id="149" parent="11" name="rpastcliant">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,1)</data-type>
+      </column>
+      <index id="150" parent="11" name="depto1">
+        <columns>depto1</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="151" parent="11" name="diaactual">
+        <columns>diaactual</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <column id="152" parent="12" name="diaactual">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="153" parent="12" name="mingresobruto">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="154" parent="12" name="ordingresobruto">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="155" parent="12" name="mclick">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="156" parent="12" name="ordclick">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="157" parent="12" name="mncredito">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="158" parent="12" name="ordncredito">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="159" parent="12" name="mingresoneto">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="160" parent="12" name="ordingresoneto">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="161" parent="12" name="diapasado">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="162" parent="12" name="mingresonetop">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="163" parent="12" name="ordingresonetop">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="164" parent="12" name="rpast">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="165" parent="12" name="manul">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="166" parent="12" name="ordanul">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="167" parent="12" name="mnovios">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="168" parent="12" name="ordnovios">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="169" parent="12" name="PRIMARY">
+        <columns>diaactual</columns>
+        <primary>1</primary>
+      </key>
+      <column id="170" parent="13" name="diaactual">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="171" parent="13" name="ingresositioac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="172" parent="13" name="ingresositioan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="173" parent="13" name="rpastingresositio">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="174" parent="13" name="ingresofonoac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="175" parent="13" name="ingresofonoan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="176" parent="13" name="rpastingresofono">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="177" parent="13" name="empresaac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="178" parent="13" name="empresaan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="179" parent="13" name="rpastempresa">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="180" parent="13" name="puntosac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="181" parent="13" name="puntosan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="182" parent="13" name="rpastpuntos">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="183" parent="13" name="totalventasac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="184" parent="13" name="totalventasan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="185" parent="13" name="rpasttotalventas">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="186" parent="13" name="mcatac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="187" parent="13" name="mcatan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="188" parent="13" name="rpastcat">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="189" parent="13" name="mctransac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="190" parent="13" name="mctransan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="191" parent="13" name="rpastctrans">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="192" parent="13" name="mdtransac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="193" parent="13" name="mdtransan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="194" parent="13" name="rpastdtrans">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="195" parent="13" name="mgiftac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="196" parent="13" name="mgiftan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="197" parent="13" name="rpastgift">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="198" parent="13" name="mcempresaac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="199" parent="13" name="mcempresaan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="200" parent="13" name="rpastcempresa">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="201" parent="13" name="totalpagoac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="202" parent="13" name="totalpagoan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="203" parent="13" name="rpasttotalpago">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="204" parent="13" name="PRIMARY">
+        <columns>diaactual</columns>
+        <primary>1</primary>
+      </key>
+      <column id="205" parent="14" name="dia">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="206" parent="14" name="ticketpromedioac">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="207" parent="14" name="ticketpromedioan">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="208" parent="14" name="rpastticket">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,1)</data-type>
+      </column>
+      <column id="209" parent="14" name="prodticketac">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,2)</data-type>
+      </column>
+      <column id="210" parent="14" name="prodticketan">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,2)</data-type>
+      </column>
+      <column id="211" parent="14" name="rpastprodticket">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,1)</data-type>
+      </column>
+      <column id="212" parent="14" name="recompraac">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="213" parent="14" name="recompraan">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="214" parent="14" name="rpastrecompra">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,1)</data-type>
+      </column>
+      <column id="215" parent="14" name="clinueac">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="216" parent="14" name="clinuean">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="217" parent="14" name="cliantac">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="218" parent="14" name="cliantan">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="219" parent="14" name="rpastclinue">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,1)</data-type>
+      </column>
+      <column id="220" parent="14" name="rpastcliant">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,1)</data-type>
+      </column>
+      <key id="221" parent="14" name="PRIMARY">
+        <columns>dia</columns>
+        <primary>1</primary>
+      </key>
+      <column id="222" parent="15" name="numorden">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="223" parent="15" name="emailcli">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="224" parent="15" name="fechant">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="225" parent="15" name="depto1">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="226" parent="15" name="tipo_cliente">
+        <mandatory>1</mandatory>
+        <data-type>varchar(7)</data-type>
+      </column>
+      <index id="227" parent="15" name="fechant">
+        <columns>fechant</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <column id="228" parent="16" name="tienda">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="229" parent="16" name="depto">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="230" parent="16" name="periodo">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="231" parent="16" name="meta">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="232" parent="16" name="desde">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="233" parent="16" name="hasta">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="234" parent="17" name="llave">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <key id="235" parent="17" name="PRIMARY">
+        <columns>llave</columns>
+        <primary>1</primary>
+      </key>
+      <column id="236" parent="18" name="codsku">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="237" parent="18" name="fectrantsl">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="238" parent="18" name="numorden">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="239" parent="18" name="fectrantsl">
+        <columns>fectrantsl</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <column id="240" parent="19" name="negocio">
+        <mandatory>1</mandatory>
+        <data-type>varchar(13)</data-type>
+      </column>
+      <column id="241" parent="19" name="diaactual">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="242" parent="19" name="mingresobruto">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="243" parent="19" name="ordingresobruto">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="244" parent="19" name="mclick">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="245" parent="19" name="ordclick">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="246" parent="19" name="mncredito">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="247" parent="19" name="ordncredito">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="248" parent="19" name="mingresoneto">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="249" parent="19" name="ordingresoneto">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="250" parent="19" name="diapasado">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="251" parent="19" name="mingresonetop">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="252" parent="19" name="ordingresonetop">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="253" parent="19" name="rpast">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="254" parent="19" name="manul">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="255" parent="19" name="ordanul">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="256" parent="19" name="mnovios">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="257" parent="19" name="ordnovios">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="258" parent="19" name="diaactual">
+        <columns>diaactual</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <column id="259" parent="20" name="negocio">
+        <mandatory>1</mandatory>
+        <data-type>varchar(13)</data-type>
+      </column>
+      <column id="260" parent="20" name="diaactual">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="261" parent="20" name="ingresositioac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="262" parent="20" name="ingresositioan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="263" parent="20" name="rpastingresositio">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="264" parent="20" name="ingresofonoac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="265" parent="20" name="ingresofonoan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="266" parent="20" name="rpastingresofono">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="267" parent="20" name="empresaac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="268" parent="20" name="empresaan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="269" parent="20" name="rpastempresa">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="270" parent="20" name="puntosac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="271" parent="20" name="puntosan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="272" parent="20" name="rpastpuntos">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="273" parent="20" name="totalventasac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="274" parent="20" name="totalventasan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="275" parent="20" name="rpasttotalventas">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="276" parent="20" name="mcatac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="277" parent="20" name="mcatan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="278" parent="20" name="rpastcat">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="279" parent="20" name="mctransac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="280" parent="20" name="mctransan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="281" parent="20" name="rpastctrans">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="282" parent="20" name="mdtransac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="283" parent="20" name="mdtransan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="284" parent="20" name="rpastdtrans">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="285" parent="20" name="mgiftac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="286" parent="20" name="mgiftan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="287" parent="20" name="rpastgift">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="288" parent="20" name="mcempresaac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="289" parent="20" name="mcempresaan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="290" parent="20" name="rpastcempresa">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="291" parent="20" name="totalpagoac">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="292" parent="20" name="totalpagoan">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="293" parent="20" name="rpasttotalpago">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="294" parent="20" name="diaactual">
+        <columns>diaactual</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <column id="295" parent="21" name="negocio">
+        <mandatory>1</mandatory>
+        <data-type>varchar(13)</data-type>
+      </column>
+      <column id="296" parent="21" name="diaactual">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="297" parent="21" name="ticketpromedioac">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="298" parent="21" name="ticketpromedioan">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="299" parent="21" name="rpastticket">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,1)</data-type>
+      </column>
+      <column id="300" parent="21" name="prodticketac">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,2)</data-type>
+      </column>
+      <column id="301" parent="21" name="prodticketan">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,2)</data-type>
+      </column>
+      <column id="302" parent="21" name="rpastprodticket">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,1)</data-type>
+      </column>
+      <column id="303" parent="21" name="recompraac">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="304" parent="21" name="recompraan">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="305" parent="21" name="rpastrecompra">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,1)</data-type>
+      </column>
+      <column id="306" parent="21" name="clinueac">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="307" parent="21" name="clinuean">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="308" parent="21" name="cliantac">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="309" parent="21" name="cliantan">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="310" parent="21" name="rpastclinue">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,1)</data-type>
+      </column>
+      <column id="311" parent="21" name="rpastcliant">
+        <mandatory>1</mandatory>
+        <data-type>decimal(11,1)</data-type>
+      </column>
+      <index id="312" parent="21" name="diaactual">
+        <columns>diaactual</columns>
+        <desc-columns></desc-columns>
+      </index>
+    </database-model>
+  </data-source>
+</component>
