@@ -12,6 +12,11 @@
             <div class="row">
                 <div class="col-lg-12"><h1 class="text-center"><a href="http://10.95.17.114/paneles"><img src="../paris.png" width="140px" height="100px"></a>Panel Venta Hora Departamentos</h1></div>
             </div>
+                    <!--
+                    <?php
+                      require_once'../visitas.php';
+                    ?>
+                  -->
 
             <div class="row">
                 <div class="col-lg-12"><h4 class='text-center'>
@@ -78,10 +83,10 @@
                     </div>
                 </div>
 
-                <!--<div class="col-lg-3 col-md-3"><br>
+                <div class="col-lg-3 col-md-3"><br>
                     <select name="depto" id="depto" class="form-control">
                         <?php
-                        /*$ventas = new mysqli('localhost', 'root', '', 'ventas');
+                        $ventas = new mysqli('localhost', 'root', '', 'ventas');
 
                         if(isset($_GET['depto'])){
                             $depto = $_GET['depto'];
@@ -115,10 +120,10 @@
                                 $nomdepto = $row['nomdepto'];
                                 echo "<option value='$depto1'>$depto1 - $nomdepto</option>";
                             }
-                        }*/
+                        }
                         ?>
                     </select>
-                </div>-->
+                </div>
 
                 <div class="col-lg-2 col-md-3"><br>
                     <div class="dropdown">
@@ -145,10 +150,10 @@
     <?php
     require_once '../paneles.php';
 
-    if(isset($_GET['fecha']) && isset($_GET['anterior']) /*&& isset($_GET['depto'])*/){
+    if(isset($_GET['fecha']) && isset($_GET['anterior']) && isset($_GET['depto'])){
         $fecha = utf8_decode($_GET['fecha']);
         $fechaAnt = utf8_decode($_GET['anterior']);
-        //$depto = $_GET['depto'];
+        $depto = $_GET['depto'];
 
         $fecha = str_split($fecha);
         $fecha = $fecha[11] . $fecha[12] . $fecha[13] . $fecha[14] . $fecha[8] . $fecha[9] . $fecha[5] . $fecha[6];
@@ -159,22 +164,22 @@
         echo '<table class="table table-condensed table-bordered table-hover">';
         echo '<thead>';
         echo '<tr>';
-        echo '<th rowspan="1" colspan="13" style="background-color: #337ab7; color: white; border-right-width: 5px; border-right-color: white;">
+        echo '<th rowspan="1" colspan="14" style="background-color: #337ab7; color: white; border-right-width: 5px; border-right-color: white;">
                       <h6 class="text-center"><b>Día Actual<br><br>' . obtenerDia(date("D", strtotime("{$fecha}"))) . ", " . date("d-m-Y", strtotime("{$fecha}")) . '</b></h6></th>';
         echo '<th colspan="2" style="background-color: #5A82D7; color: white;">
                       <h6 class="text-center"><b>Día Anterior<br><br>' . obtenerDia(date("D", strtotime("{$fechaAnt}"))) . ", " . date("d-m-Y", strtotime("{$fechaAnt}")) . '</br></h6></th>';
         echo '<th rowspan="3" style="background-color: #5A82D7; color: white;"><h6 class="text-center"><b>% R/Past</b></h6></th>';
+        echo '<th colspan="1" rowspan="3" style="background-color: #5A82D7; color: white;"><h6 class="text-center"><b>% Peso Acumulado</b></h6></th>';
         echo '</tr>';
 
         echo '<tr>';
-        echo '<th rowspan="2" colspan="1" style="background-color: #337ab7; color: white;"><h6 class="text-center"><b>División / Depto</b></h6></th>';
+        echo '<th rowspan="2" colspan="1" style="background-color: #337ab7; color: white;"><h6 class="text-center"><b>Hora</b></h6></th>';
         echo '<th colspan="2" style="background-color: #4E85FC; color: white;"><h6 class="text-center"><b>Ingreso Bruto</b></h6></th>';
         echo '<th colspan="2" style="background-color: #4E85FC; color: white;"><h6 class="text-center"><b>Click & Collect</b></h6></th>';
         echo '<th colspan="2" style="background-color: #7E9FE7; color: white;"><h6 class="text-center"><b>Pendiente Validación</br></h6></th>';
         echo '<th colspan="2" style="background-color: #7E9FE7; color: white;"><h6 class="text-center"><b>Anulaciones</b></h6></th>';
         echo '<th colspan="2" style="background-color: #7E9FE7; color: white;"><h6 class="text-center"><b>Novios</b></h6></th>';
-        echo '<th colspan="2" style="background-color: #337ab7; color: white; border-right-width: 5px; border-right-color: white;"><h6 class="text-center"><b>Ingreso Neto (Sin IVA)</b></h6></th>';
-
+        echo '<th colspan="3" style="background-color: #337ab7; color: white; border-right-width: 5px; border-right-color: white;"><h6 class="text-center"><b>Ingreso Neto (Sin IVA)</b></h6></th>';
         echo '<th colspan="2" style="background-color: #5A82D7; color: white;"><h6 class="text-center"><b>Ingreso Neto (Sin IVA)</b></h6></th>';
         echo '</tr>';
 
@@ -189,14 +194,15 @@
         echo '<th style="background-color: #7E9FE7; color: white;"><h6 class="text-center"><b>#</b></h6></th>';
         echo '<th style="background-color: #7E9FE7; color: white;"><h6 class="text-center"><b>Monto $</b></h6></th>';
         echo '<th style="background-color: #7E9FE7; color: white;"><h6 class="text-center"><b>#</b></h6></th>';
-        echo '<th style="background-color: #337ab7; color: white;"><h6 class="text-center"><b>Monto $</b></h6></th>';
+        echo '<th style="background-color: #337ab7; color: white;"><h6 class="text-center"><b>Monto x Hora $</b></h6></th>';
+        echo '<th style="background-color: #337ab7; color: white;"><h6 class="text-center"><b>Monto acumulado</b></h6></th>';
         echo '<th style="background-color: #337ab7; color: white; border-right-width: 5px; border-right-color: white;""><h6 class="text-center"><b>#</b></h6></th>';
 
         echo '<th style="background-color: #5A82D7; color: white;"><h6 class="text-center"><b>Monto $</b></h6></th>';
         echo '<th style="background-color: #5A82D7; color: white;"><h6 class="text-center"><b>#</b></h6></th>';
         echo '</tr>';
         echo '</thead>';
-        deptoXhoras($fecha, $fechaAnt, $venta);
+        deptoXhora($fecha, $fechaAnt, $venta, $depto);
         echo "</table>";
 
     }else{
@@ -209,21 +215,22 @@
         echo '<table class="table table-condensed table-bordered table-hover">';
         echo '<thead>';
         echo '<tr>';
-        echo '<th rowspan="1" colspan="13" style="background-color: #337ab7; color: white; border-right-width: 5px; border-right-color: white;">
+        echo '<th rowspan="1" colspan="14" style="background-color: #337ab7; color: white; border-right-width: 5px; border-right-color: white;">
                       <h6 class="text-center"><b>Día Actual<br><br>' . obtenerDia(date("D", strtotime("{$fecha}"))) . ", " . date("d-m-Y", strtotime("{$fecha}")) . '</b></h6></th>';
         echo '<th colspan="2" style="background-color: #5A82D7; color: white;">
                       <h6 class="text-center"><b>Día Anterior<br><br>' . obtenerDia(date("D", strtotime("{$fechaAnt}"))) . ", " . date("d-m-Y", strtotime("{$fechaAnt}")) . '</br></h6></th>';
         echo '<th rowspan="3" style="background-color: #5A82D7; color: white;"><h6 class="text-center"><b>% R/Past</b></h6></th>';
+        echo '<th rowspan="3" style="background-color: #5A82D7; color: white;"><h6 class="text-center"><b>% Peso Acumulado</b></h6></th>';
         echo '</tr>';
 
         echo '<tr>';
-        echo '<th rowspan="2" colspan="1" style="background-color: #337ab7; color: white;"><h6 class="text-center"><b>División / Depto</b></h6></th>';
+        echo '<th rowspan="2" colspan="1" style="background-color: #337ab7; color: white;"><h6 class="text-center"><b>Hora</b></h6></th>';
         echo '<th colspan="2" style="background-color: #4E85FC; color: white;"><h6 class="text-center"><b>Ingreso Bruto</b></h6></th>';
         echo '<th colspan="2" style="background-color: #4E85FC; color: white;"><h6 class="text-center"><b>Click & Collect</b></h6></th>';
         echo '<th colspan="2" style="background-color: #7E9FE7; color: white;"><h6 class="text-center"><b>Pendiente Validación</br></h6></th>';
         echo '<th colspan="2" style="background-color: #7E9FE7; color: white;"><h6 class="text-center"><b>Anulaciones</b></h6></th>';
         echo '<th colspan="2" style="background-color: #7E9FE7; color: white;"><h6 class="text-center"><b>Novios</b></h6></th>';
-        echo '<th colspan="2" style="background-color: #337ab7; color: white; border-right-width: 5px; border-right-color: white;"><h6 class="text-center"><b>Ingreso Neto (Sin IVA)</b></h6></th>';
+        echo '<th colspan="3" style="background-color: #337ab7; color: white; border-right-width: 5px; border-right-color: white;"><h6 class="text-center"><b>Ingreso Neto (Sin IVA)</b></h6></th>';
 
         echo '<th colspan="2" style="background-color: #5A82D7; color: white;"><h6 class="text-center"><b>Ingreso Neto (Sin IVA)</b></h6></th>';
         echo '</tr>';
@@ -239,14 +246,16 @@
         echo '<th style="background-color: #7E9FE7; color: white;"><h6 class="text-center"><b>#</b></h6></th>';
         echo '<th style="background-color: #7E9FE7; color: white;"><h6 class="text-center"><b>Monto $</b></h6></th>';
         echo '<th style="background-color: #7E9FE7; color: white;"><h6 class="text-center"><b>#</b></h6></th>';
-        echo '<th style="background-color: #337ab7; color: white;"><h6 class="text-center"><b>Monto $</b></h6></th>';
+        echo '<th style="background-color: #337ab7; color: white;"><h6 class="text-center"><b>Monto x Hora $</b></h6></th>';
+        echo '<th style="background-color: #337ab7; color: white;"><h6 class="text-center"><b>Monto acumulado</b></h6></th>';
         echo '<th style="background-color: #337ab7; color: white; border-right-width: 5px; border-right-color: white;""><h6 class="text-center"><b>#</b></h6></th>';
 
         echo '<th style="background-color: #5A82D7; color: white;"><h6 class="text-center"><b>Monto $</b></h6></th>';
         echo '<th style="background-color: #5A82D7; color: white;"><h6 class="text-center"><b>#</b></h6></th>';
         echo '</tr>';
         echo '</thead>';
-        deptoXhoras($fecha, $fechaAnt, $venta);
+        deptoXhora($fecha, $fechaAnt, $venta, $depto);
+        //deptoXhoras($fecha, $fechaAnt, $venta);
         echo "</table>";
 
     }
