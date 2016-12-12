@@ -1361,13 +1361,13 @@ function deptoXhora($fecha, $fechaAnt, $venta, $depto){
         "220000 - 225959",
         "230000 - 235959");
 
-      $ingreso_bruto_act = array(); $ord_bruto_act = array();
-      $click_collect_act = array(); $ord_cc_act    = array();
-      $pendiente_val_act = array(); $ord_val_act   = array();
-      $anulaciones_act   = array(); $ord_anu_act   = array();
-      $novios_act        = array(); $ord_nov_act   = array();
+    $ingreso_bruto_act = array(); $ord_bruto_act = array();
+    $click_collect_act = array(); $ord_cc_act    = array();
+    $pendiente_val_act = array(); $ord_val_act   = array();
+    $anulaciones_act   = array(); $ord_anu_act   = array();
+    $novios_act        = array(); $ord_nov_act   = array();
 
-      $ingreso_bruto_ant = array(); $ord_bruto_ant = array();
+    $ingreso_bruto_ant = array(); $ord_bruto_ant = array();
 
     $cant = count($rangos);
 
@@ -1449,9 +1449,9 @@ function deptoXhora($fecha, $fechaAnt, $venta, $depto){
         if($row['active'] == 1)
             $query = "select sum(pxq) as sumpen, count(distinct numorden) as ordenes, concat(inicio, ' - ', fin) as rango
 
-              from auxvalidar where fecorden = $fecha and horaorden <= $horatmp
+              from auxvalidar where fecorden = $fecha
 
-              and estanter in (0, 1, 2, 34, 81) and estorden not in (99, 80) and depto = $depto group by rango order by rango asc";
+              and estanter in (0, 1, 2, 34, 81) and estorden not in (99, 80) and depto1 = $depto group by rango order by rango asc";
     }
 
     $res = $val->query($query);
@@ -1598,32 +1598,33 @@ function deptoXhora($fecha, $fechaAnt, $venta, $depto){
     foreach($rangos as $item){
         for($i = 0; $i < $cant; $i++){
             if($rangos[$i] == $item){
-              $total_ingreso_bruto_act += $ingreso_bruto_act[$i];
-              $total_ord_bruto_act     += $ord_bruto_act[$i];
-              $total_click_collect_act += $click_collect_act[$i];
-              $total_ord_cc_act        += $ord_cc_act[$i];
-              $total_pendiente_val_act += $pendiente_val_act[$i];
-              $total_ord_val_act       += $ord_val_act[$i];
-              $total_anulaciones_act   += $anulaciones_act[$i];
-              $total_ord_anu_act       += $ord_anu_act[$i];
-              $total_novios_act        += $novios_act[$i];
-              $total_ord_nov_act       += $ord_nov_act[$i];
+                $total_ingreso_bruto_act += $ingreso_bruto_act[$i];
+                $total_ord_bruto_act     += $ord_bruto_act[$i];
+                $total_click_collect_act += $click_collect_act[$i];
+                $total_ord_cc_act        += $ord_cc_act[$i];
+                $total_pendiente_val_act += $pendiente_val_act[$i];
+                $total_ord_val_act       += $ord_val_act[$i];
+                $total_anulaciones_act   += $anulaciones_act[$i];
+                $total_ord_anu_act       += $ord_anu_act[$i];
+                $total_novios_act        += $novios_act[$i];
+                $total_ord_nov_act       += $ord_nov_act[$i];
 
-              $total_ingreso_bruto_ant += $ingreso_bruto_ant[$i];
-              $total_ord_bruto_ant     += $ord_bruto_ant[$i];
-              $total_monto_x_hora       = 0;
-              $total_peso_acumulado     = 0;
-              if($aux == 0){
-                $total_monto_x_hora       = round($ingreso_bruto_act[$i]/1.19);
-                $total_peso_acumulado    += 0;
-              }
-              else{
-                $total_monto_x_hora       = round($ingreso_bruto_act[$i]/1.19);
-                $total_peso_acumulado    += ($total_monto_x_hora/$aux)*100;
-              }
+                $total_ingreso_bruto_ant += $ingreso_bruto_ant[$i];
+                $total_ord_bruto_ant     += $ord_bruto_ant[$i];
+                $total_monto_x_hora       = 0;
+                $total_peso_acumulado     = 0;
+                if($aux == 0){
+                    $total_monto_x_hora       = round($ingreso_bruto_act[$i]/1.19);
+                    $total_peso_acumulado    += 0;
+                }
+                else{
+                    $total_monto_x_hora       = round($ingreso_bruto_act[$i]/1.19);
+                    $total_peso_acumulado    += ($total_monto_x_hora/$aux)*100;
+                }
 
-          }
+            }
         }
+
         $total_ingreso_neto_act = round($total_ingreso_bruto_act / 1.19);
         $total_ingreso_neto_ant = round($total_ingreso_bruto_ant / 1.19);
 
@@ -1644,27 +1645,86 @@ function deptoXhora($fecha, $fechaAnt, $venta, $depto){
         if($rpast < 0)
             $label = "label label-danger";
 
-        echo '<tr style=\'height: 45px;\'><td class="text-center"><h5><b>' . $item . '</b></td>';
-        echo "<td><h6 class='text-center'>" . number_format($total_ingreso_bruto_act, 0, ',', '.') . "</h6></td>";
-        echo "<td><h6 class='text-center'>" . number_format($total_ord_bruto_act, 0, ',', '.') . "</h6></td>";
-        echo "<td><h6 class='text-center'>" . number_format($total_click_collect_act, 0, ',', '.') . "</h6></td>";
-        echo "<td><h6 class='text-center'>" . number_format($total_ord_cc_act, 0, ',', '.') . "</h6></td>";
-        echo "<td><h6 class='text-center'>" . number_format($total_pendiente_val_act, 0, ',', '.') . "</h6></td>";
-        echo "<td><h6 class='text-center'>" . number_format($total_ord_val_act, 0, ',', '.') . "</h6></td>";
-        echo "<td><h6 class='text-center'>" . number_format($total_anulaciones_act, 0, ',', '.') . "</h6></td>";
-        echo "<td><h6 class='text-center'>" . number_format($total_ord_anu_act, 0, ',', '.') . "</h6></td>";
-        echo "<td><h6 class='text-center'>" . number_format($total_novios_act, 0, ',', '.') . "</h6></td>";
-        echo "<td><h6 class='text-center'>" . number_format($total_ord_nov_act, 0, ',', '.') . "</h6></td>";
-        echo "<td><h6 class='text-center'>" . number_format($total_monto_x_hora, 0, ',', '.') . "</h6></td>";
-        echo "<td><h6 class='text-center'>" . number_format($total_ingreso_neto_act, 0, ',', '.') . "</h6></td>";
-        echo "<td><h6 class='text-center'>" . number_format($total_ord_bruto_act, 0, ',', '.') . "</h6></td>";
+        $hour = str_split($item);
 
-        echo "<td><h6 class='text-center'>" . number_format($total_ingreso_neto_ant, 0, ',', '.') . "</h6></td>";
-        echo "<td><h6 class='text-center'>" . number_format($total_ord_bruto_ant, 0, ',', '.') . "</h6></td>";
-        echo "<td class='text-center'><h6 class='$label'>" . number_format($rpast, 0, ',', '.') . " %</h6></td>";
-        echo "<td class='text-center'><h6 class='label label-default'>" . number_format($total_peso_acumulado, 0, ',', '.') . " %</h6></td></tr>";
+        $first_range = $hour[0] . $hour[1] . ":" . $hour[2] . $hour[3] . ":" . $hour[4] . $hour[5];
 
-        for($i = 0; $i < $cant; $i++){
+        $last_range  = $hour[9] . $hour[10] . ":" . $hour[11] . $hour[12] . ":" . $hour[13] . $hour[14];
+
+        $item_tmp = $first_range . " - " . $last_range;
+
+        if($fecha == date("Ymd")) {
+
+            if (date("His") >= date("His", strtotime("{$first_range}"))) {
+
+                $color = "";
+
+                if(date("His") >=  date("His", strtotime("{$first_range}")) && date("His") <= date("His",  strtotime("{$last_range}")))
+                    $color = "label label-primary";
+
+                echo '<tr style=\'height: 45px;\'><td class="text-center"><h6 class="' . $color . '">' . $item_tmp . '</h6></td>';
+                echo "<td><h6 class='text-center'>" . number_format($total_ingreso_bruto_act, 0, ',', '.') . "</h6></td>";
+                echo "<td><h6 class='text-center'>" . number_format($total_ord_bruto_act, 0, ',', '.') . "</h6></td>";
+                echo "<td><h6 class='text-center'>" . number_format($total_click_collect_act, 0, ',', '.') . "</h6></td>";
+                echo "<td><h6 class='text-center'>" . number_format($total_ord_cc_act, 0, ',', '.') . "</h6></td>";
+                echo "<td><h6 class='text-center'>" . number_format($total_pendiente_val_act, 0, ',', '.') . "</h6></td>";
+                echo "<td><h6 class='text-center'>" . number_format($total_ord_val_act, 0, ',', '.') . "</h6></td>";
+                echo "<td><h6 class='text-center'>" . number_format($total_anulaciones_act, 0, ',', '.') . "</h6></td>";
+                echo "<td><h6 class='text-center'>" . number_format($total_ord_anu_act, 0, ',', '.') . "</h6></td>";
+                echo "<td><h6 class='text-center'>" . number_format($total_novios_act, 0, ',', '.') . "</h6></td>";
+                echo "<td><h6 class='text-center'>" . number_format($total_ord_nov_act, 0, ',', '.') . "</h6></td>";
+                echo "<td><h6 class='text-center'>" . number_format($total_monto_x_hora, 0, ',', '.') . "</h6></td>";
+                echo "<td><h6 class='text-center'>" . number_format($total_ingreso_neto_act, 0, ',', '.') . "</h6></td>";
+                echo "<td><h6 class='text-center'>" . number_format($total_ord_bruto_act, 0, ',', '.') . "</h6></td>";
+
+                echo "<td><h6 class='text-center'>" . number_format($total_ingreso_neto_ant, 0, ',', '.') . "</h6></td>";
+                echo "<td><h6 class='text-center'>" . number_format($total_ord_bruto_ant, 0, ',', '.') . "</h6></td>";
+                echo "<td class='text-center'><h6 class='$label'>" . number_format($rpast, 0, ',', '.') . " %</h6></td>";
+                echo "<td class='text-center'><h6 class='label label-default'>" . number_format($total_peso_acumulado, 0, ',', '.') . " %</h6></td></tr>";
+            } else {
+                echo '<tr style=\'height: 45px;\'><td class="text-center"><h6>' . $item_tmp . '</h6></td>';
+                echo "<td><h6 class='text-center'>-</h6></td>";
+                echo "<td><h6 class='text-center'>-</h6></td>";
+                echo "<td><h6 class='text-center'>-</h6></td>";
+                echo "<td><h6 class='text-center'>-</h6></td>";
+                echo "<td><h6 class='text-center'>-</h6></td>";
+                echo "<td><h6 class='text-center'>-</h6></td>";
+                echo "<td><h6 class='text-center'>-</h6></td>";
+                echo "<td><h6 class='text-center'>-</h6></td>";
+                echo "<td><h6 class='text-center'>-</h6></td>";
+                echo "<td><h6 class='text-center'>-</h6></td>";
+                echo "<td><h6 class='text-center'>-</h6></td>";
+                echo "<td><h6 class='text-center'>-</h6></td>";
+                echo "<td><h6 class='text-center'>-</h6></td>";
+
+                echo "<td><h6 class='text-center'>" . number_format($total_ingreso_neto_ant, 0, ',', '.') . "</h6></td>";
+                echo "<td><h6 class='text-center'>" . number_format($total_ord_bruto_ant, 0, ',', '.') . "</h6></td>";
+                echo "<td class='text-center'><h6 class='$label'>" . number_format($rpast, 0, ',', '.') . " %</h6></td>";
+                echo "<td class='text-center'><h6 class='label label-default'>" . number_format($total_peso_acumulado, 0, ',', '.') . " %</h6></td></tr>";
+            }
+        }else{
+            echo '<tr style=\'height: 45px;\'><td class="text-center"><h6>' . $item_tmp . '</h6></td>';
+            echo "<td><h6 class='text-center'>" . number_format($total_ingreso_bruto_act, 0, ',', '.') . "</h6></td>";
+            echo "<td><h6 class='text-center'>" . number_format($total_ord_bruto_act, 0, ',', '.') . "</h6></td>";
+            echo "<td><h6 class='text-center'>" . number_format($total_click_collect_act, 0, ',', '.') . "</h6></td>";
+            echo "<td><h6 class='text-center'>" . number_format($total_ord_cc_act, 0, ',', '.') . "</h6></td>";
+            echo "<td><h6 class='text-center'>" . number_format($total_pendiente_val_act, 0, ',', '.') . "</h6></td>";
+            echo "<td><h6 class='text-center'>" . number_format($total_ord_val_act, 0, ',', '.') . "</h6></td>";
+            echo "<td><h6 class='text-center'>" . number_format($total_anulaciones_act, 0, ',', '.') . "</h6></td>";
+            echo "<td><h6 class='text-center'>" . number_format($total_ord_anu_act, 0, ',', '.') . "</h6></td>";
+            echo "<td><h6 class='text-center'>" . number_format($total_novios_act, 0, ',', '.') . "</h6></td>";
+            echo "<td><h6 class='text-center'>" . number_format($total_ord_nov_act, 0, ',', '.') . "</h6></td>";
+            echo "<td><h6 class='text-center'>" . number_format($total_monto_x_hora, 0, ',', '.') . "</h6></td>";
+            echo "<td><h6 class='text-center'>" . number_format($total_ingreso_neto_act, 0, ',', '.') . "</h6></td>";
+            echo "<td><h6 class='text-center'>" . number_format($total_ord_bruto_act, 0, ',', '.') . "</h6></td>";
+
+            echo "<td><h6 class='text-center'>" . number_format($total_ingreso_neto_ant, 0, ',', '.') . "</h6></td>";
+            echo "<td><h6 class='text-center'>" . number_format($total_ord_bruto_ant, 0, ',', '.') . "</h6></td>";
+            echo "<td class='text-center'><h6 class='$label'>" . number_format($rpast, 0, ',', '.') . " %</h6></td>";
+            echo "<td class='text-center'><h6 class='label label-default'>" . number_format($total_peso_acumulado, 0, ',', '.') . " %</h6></td></tr>";
+        }
+
+        /*for($i = 0; $i < $cant; $i++){
             if($rangos[$i] == $item){
                 $ingreso_neto_act = round(($ingreso_bruto_act[$i] / 1.19));
 
@@ -1705,6 +1765,7 @@ function deptoXhora($fecha, $fechaAnt, $venta, $depto){
                 echo "<td class='text-center $clase' style='display: none'><h6 class='$label'>" . number_format($rpast, 0, ',', '.') . " %</h6></td>";
                 echo "<td class='text-center $clase' style='display: none'><h6 class='label label-default'>" . number_format($total_peso_acumulado, 0, ',', '.') . " %</h6></td></tr>";
             }
-        }
+        }*/
     }
-  }
+}
+

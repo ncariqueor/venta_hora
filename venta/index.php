@@ -8,6 +8,18 @@
 
 <body>
 <header class="container">
+    <script>
+        var int=self.setInterval("refresh()",1000);
+        function refresh()
+        {
+            fecha = new Date();
+            if( (fecha.getMinutes() == 0 && fecha.getSeconds() == 0) || (fecha.getMinutes() == 10 && fecha.getSeconds() == 0) ||
+                (fecha.getMinutes() == 20 && fecha.getSeconds() == 0) || (fecha.getMinutes() == 30 && fecha.getSeconds() == 0) ||
+                (fecha.getMinutes() == 40 && fecha.getSeconds() == 0) || (fecha.getMinutes() == 50 && fecha.getSeconds() == 0))
+                location.reload(true);
+        }
+    </script>
+
     <nav class="navbar navbar-default">
         <div class="row">
             <div class="col-lg-12"><h1 class="text-center"><a href="http://10.95.17.114/paneles"><img src="../paris.png" width="140px" height="100px"></a>Performance Venta Hora</h1></div>
